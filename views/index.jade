@@ -1,0 +1,19 @@
+h2 search github
+!= partial( 'shared/search_form' )
+
+h2.heading.dark direct by name
+form#direct( action='/repo/show', method='get' )
+  input( name='user', placeholder='user name...' )
+  input( name='repo', placeholder='repository name...' )
+  input.button.icon.arrowright( type='submit', value='find' )
+
+
+h2.heading.dark personalized
+- if( !user ) {
+  #me
+    a.button.primary.big#signin( href="/auth/login" )
+      img( src="/signin.png", alt='signin with github' )
+- } else {
+  #me_loading loading
+  #me( rel='/me' )
+- }

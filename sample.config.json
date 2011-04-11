@@ -1,0 +1,10 @@
+{
+  "PORT": 3001,
+  "DB": "mongodb://localhost/bigpuller",
+  "SESSION_SECRET": "something",
+  "ANALYTICS_ID": "",
+  "KEYS": {
+    "client": "CLIENT",
+    "secret": "SECRET"
+  }
+}

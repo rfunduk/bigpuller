@@ -1,0 +1,18 @@
+#nav
+  #logo BigPuller
+  #whatthe
+    p
+      a( href="/what" ) What is this?
+  ul
+    - if( user ) {
+      li
+        a( href="/auth/logout" ) logout
+      li( style="text-indent: 25px; background-image: url(http://gravatar.com/avatar/" + user.gravatar + "?s=22);" )
+        = user.name
+    - } else if( !home ) {
+      li
+        a( href="/auth/login" ) login with github
+    - }
+    - if( !home )
+      li
+        a( href="/" ) top

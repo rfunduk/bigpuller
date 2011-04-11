@@ -1,0 +1,23 @@
+#owned
+  h3.heading Your Repos
+  - if( user.repos.owned.length > 0 ) {
+    ul.repo_list
+      - user.repos.owned.forEach( function( repo ) {
+        li
+          a( href="/repo/" + repo )= repo
+      - } )
+  - } else {
+    p none found
+  - }
+
+#watched
+  h3.heading Watched Repos
+  - if( user.repos.watched.length > 0 ) {
+    ul.repo_list
+      - user.repos.watched.forEach( function( repo ) {
+        li
+          a( href="/repo/" + repo )= repo
+      - } )
+  - } else {
+    p none found
+- }

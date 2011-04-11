@@ -1,0 +1,35 @@
+h2.repo.heading
+  a( href=repo.url ) #{repo.owner}/#{repo.name}
+
+#info
+  - if( repo.fork ) {
+    div
+      label fork of
+      span.value
+        a( href="/repo/" + repo.parent )= repo.parent
+  - }
+  div
+    label last commit
+    span.value= h.formatDate( repo.pushed_at )
+  div
+    label language
+    span.value= repo.language
+
+#pull_requests_loading loading
+#pull_requests( rel='/repo/' + repo.owner + '/' + repo.name + '/pull_requests' )
+
+- if( contributors.length > 0 ) {
+  #contributors
+    h3.heading contributors
+    ul
+      - contributors.forEach( function( c ) {
+        li
+          - if( c.login ) { // github user
+            a.user( href="https://github.com/" + c.login, style="background: transparent url(http://gravatar.com/avatar/" + c.gravatar_id + "?s=22) no-repeat left center;" )
+              span.nowrap= c.name || c.login
+          - } else {
+            span.user( style="background: transparent url(http://gravatar.com/avatar/nope?s=22) no-repeat left center;" )
+              span.nowrap= c.name
+          - }
+      - } )
+  - }

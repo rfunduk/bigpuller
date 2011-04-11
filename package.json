@@ -1,0 +1,27 @@
+{
+  "name": "prrapp",
+  "version": "0.0.1",
+  "repository": {},
+  "directories": {},
+  "engines": { "node": ">=0.4" },
+  "scripts": {
+    "dev": "coffee dev.coffee"
+  },
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "cookie-sessions": "*",
+    "seq": "*",
+    "github": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "underscore": "*",
+    "oauth": ">=0.9",
+    "jade": "*"
+  },
+  "devDependencies": {
+    "coffee-script": "*",
+    "less": "*",
+    "colors": ">=0.5.0"
+  }
+}

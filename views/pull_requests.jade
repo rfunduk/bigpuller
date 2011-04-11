@@ -1,0 +1,44 @@
+- if( prs.length > 0 ) {
+  h3.heading <strong>#{prs.length}</strong> pull request#{prs.length != 1 ? 's' : ''}
+  table#average_time
+    thead
+      tr.head
+        th &nbsp;
+        th alive
+        th completed
+        th all
+    tbody
+      tr
+        th
+          span mean days to close
+        td= h.formatPrDays(average.active.mean)
+        td= h.formatPrDays(average.completed.mean)
+        td= h.formatPrDays(average.all.mean)
+      tr
+        th
+          span standard deviation
+        td= h.formatPrDays(average.active.deviation)
+        td= h.formatPrDays(average.completed.deviation)
+        td= h.formatPrDays(average.all.deviation)
+
+  a#see_all( href='javascript:void(0);' ) see all
+  table#log
+    thead
+      tr
+        th title
+        th contributor
+        th created date
+        th merged date
+        th comments
+    tbody
+      - h._(prs).chain().sortBy( function(pr) { return pr.created_at; } ).each( function( pr ) {
+        tr( class=pr.state )
+          td
+            a( href=pr.html_url )= pr.title.length == 0 ? 'untitled' : pr.title
+          td
+            a( href="https://github.com/" + pr.user.login )= pr.user.name || pr.user.login
+          td= h.formatDate( pr.created_at )
+          td= pr.merged_at || pr.closed_at ? h.formatDate( pr.merged_at || pr.closed_at ) : 'n/a'
+          td= pr.comments
+      - })
+- }

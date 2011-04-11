@@ -1,0 +1,7 @@
+h2.heading.dark search results: #{query}
+
+ul#search_results.repo_list
+  - results.forEach( function( r ) {
+    li
+      a( href='/repo/' + r.owner + '/' + r.name )= r.owner + '/' + r.name
+  - } )
