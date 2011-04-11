@@ -1,5 +1,5 @@
 {
-  "name": "prrapp",
+  "name": "bigpuller",
   "version": "0.0.1",
   "repository": {},
   "directories": {},
@@ -12,7 +12,7 @@
     "express": "*",
     "cookie-sessions": "*",
     "seq": "*",
-    "github": "*",
+    "github": ">=0.0.6",
     "mongodb": "*",
     "mongoose": "*",
     "underscore": "*",
