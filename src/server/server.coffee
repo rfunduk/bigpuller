@@ -148,7 +148,6 @@ render = ( req, res, view, opts ) ->
   opts.home = false unless opts.home
   opts.h = HELPERS
   opts.config = config
-  throw 'wut'
   res.render view, opts
 
 app = express.createServer(

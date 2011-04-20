@@ -191,7 +191,6 @@
     }
     opts.h = HELPERS;
     opts.config = config;
-    throw 'wut';
     return res.render(view, opts);
   };
   app = express.createServer(connect.logger({
