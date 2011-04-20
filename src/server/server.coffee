@@ -147,6 +147,7 @@ render = ( req, res, view, opts ) ->
   opts.user = req.user
   opts.home = false unless opts.home
   opts.h = HELPERS
+  opts.config = config
   res.render view, opts
 
 app = express.createServer(
