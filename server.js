@@ -190,6 +190,8 @@
       opts.home = false;
     }
     opts.h = HELPERS;
+    opts.config = config;
+    throw 'wut';
     return res.render(view, opts);
   };
   app = express.createServer(connect.logger({
@@ -366,7 +368,10 @@
     });
   });
   app.listen(config.PORT);
-  app.error(function(err) {
-    return log.error(err);
+  app.error(function(err, req, res) {
+    log.error(err);
+    return render(req, res, 'error', {
+      error: err
+    });
   });
 }).call(this);

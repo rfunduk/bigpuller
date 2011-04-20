@@ -148,6 +148,7 @@ render = ( req, res, view, opts ) ->
   opts.home = false unless opts.home
   opts.h = HELPERS
   opts.config = config
+  throw 'wut'
   res.render view, opts
 
 app = express.createServer(
@@ -297,5 +298,6 @@ app.get '/auth/confirm', (req, res) ->
 
 app.listen config.PORT
 
-app.error (err) ->
+app.error (err, req, res) ->
   log.error( err )
+  render req, res, 'error', error: err
