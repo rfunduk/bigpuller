@@ -895,6 +895,12 @@ ul.repo_list li:hover {
   font-size: 18px;
   line-height: 22px;
 }
+#container #what p a {
+  color: #5c2313;
+}
+#container #what p a:hover {
+  color: #93381f;
+}
 #container #me {
   text-align: center;
   width: 620px;
