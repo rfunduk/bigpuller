@@ -15,6 +15,11 @@ Edit `config.json` with relevant bits. You'll need a
 [GitHub Application](https://github.com/account/applications) and
 [MongoDB](http://mongodb.org) running somewhere accessible.
 
+The GitHub app will ask you for a url, this can be whatever your
+local instance will be server at (and can be local only). It will
+also ask for a callback url, this should be the same, but with this
+path: `/auth/confirm`
+
 Then:
 
     npm run dev
