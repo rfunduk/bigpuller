@@ -2,7 +2,7 @@
 
 ## What?
 
-http://http://www.bigpuller.com/what
+[What?](https://github.com/rfunduk/bigpuller/blob/master/views/what.jade)
 
 ## How?
 
